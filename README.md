@@ -101,7 +101,7 @@ source install/local_setup.bash
 ### 1️. **Isaac Sim Ackermann 차량 추가**
 🔗 [공식 튜토리얼: Isaac Sim Ackermann Controller](https://docs.isaacsim.omniverse.nvidia.com/latest/ros2_tutorials/tutorial_ros2_ackermann_controller.html)
 
-### 2️. **2D LiDAR 추가**
+### 2️. **2D LiDAR 및 Omnigraph 추가**
 🔗 [설명 블로그: 롤롤하](https://786studio.tistory.com/4)
 
 ### 3️. **Isaac Sim Assets 가져오기**
