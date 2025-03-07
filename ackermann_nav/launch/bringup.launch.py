@@ -29,11 +29,14 @@ from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
     # Get the launch directory
-    my_nav_dir = get_package_share_directory('ackermann_nav')
+    nav_dir = get_package_share_directory('ackermann_nav')
+    controller_dir = get_package_share_directory('cmdvel_to_ackermann')
+
     
-    my_launch_dir = os.path.join(my_nav_dir, 'launch')
-    my_param_dir = os.path.join(my_nav_dir, 'param')
-    my_param_file = 'acker_params.yaml' #'neuronbot_params.yaml'
+    nav_launch = os.path.join(nav_dir, 'launch')
+    nav_param = os.path.join(nav_dir, 'param')
+    nav_param_file = 'acker_params.yaml' #'neuronbot_params.yaml'
+    controller_launch = os.path.join(controller_dir, 'launch')
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration('namespace')
@@ -80,7 +83,7 @@ def generate_launch_description():
 
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file',
-        default_value=os.path.join(my_param_dir, my_param_file),
+        default_value=os.path.join(nav_param, nav_param_file),
         description='Full path to the ROS2 parameters file to use for all launched nodes')
 
     declare_autostart_cmd = DeclareLaunchArgument(
@@ -104,7 +107,7 @@ def generate_launch_description():
     bringup_cmd_group = GroupAction([
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(my_launch_dir, 'slam.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(nav_launch, 'slam.launch.py')),
             condition=IfCondition(slam),
             launch_arguments={'namespace': namespace,
                               'use_sim_time': use_sim_time,
@@ -113,7 +116,7 @@ def generate_launch_description():
                               'params_file': params_file}.items()),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(my_launch_dir, 'navigation.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(nav_launch, 'navigation.launch.py')),
             launch_arguments={'namespace': namespace,
                               'use_sim_time': use_sim_time,
                               'autostart': autostart,
@@ -123,11 +126,13 @@ def generate_launch_description():
                               'container_name': 'nav2_container'}.items()),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(my_launch_dir, 'rviz_view.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(nav_launch, 'rviz_view.launch.py')),
             launch_arguments={'use_sim_time': use_sim_time,
                               'open_rviz': open_rviz,
                               'map_subscribe_transient_local': 'true'}.items()),
 
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(controller_launch, 'cmdvel_to_ackermann.launch.py'))),
     ])
 
     # Create the launch description and populate
