@@ -9,11 +9,12 @@
 
 ## 📌 개요
 
-이 프로젝트는 **NVIDIA Isaac Sim 4.5**에서 **Ackermann 조향 차량**을 위한 **통합된 네비게이션 및 SLAM 스택**을 제공합니다.  
-**ROS 2 Navigation2**, **SmacPlannerHybrid**, **nav2_regulated_pure_pursuit_controller**를 활용하여 다음과 같은 기능을 제공합니다:
+- 이 프로젝트는 **NVIDIA Isaac Sim 4.5**에서 **Ackermann 조향 차량**을 위한 **통합된 네비게이션 및 SLAM 스택**을 제공합니다.
 
-✅ __Ackermann 운동학에 최적화된 Hybrid A__ _글로벌 플래너_  
-✅ **동적 속도 조절이 가능한 순수 추적 기반 로컬 플래너**  
+- **ROS 2 Navigation2**, **SmacPlannerHybrid** **nav2_regulated_pure_pursuit_controller**를 활용하여 다음과 같은 기능을 제공합니다:
+
+✅ **Ackermann 운동학에 최적화된 Hybrid A 글로벌 플래너**
+✅ **경로 곡률에 따라 조향과 속도를 동적으로 조절하는 로컬 플래너**  
 ✅ **Cartographer 및 SLAM-Toolbox 기반 SLAM 지원**  
 ✅ **NVIDIA Isaac Sim과의 원활한 통합**
 
@@ -124,10 +125,8 @@ ros2 launch ackermann_nav bringup.launch.py
 
 ### ✅ **글로벌 플래너: SmacPlannerHybrid**
 
-- __Hybrid A__ _알고리즘 구현_*
-    
-- **Ackermann-aware 경로 계획**, 불필요한 회전 방지
-    
+- __Hybrid A__ _알고리즘 적용_*
+        
 - **효율적인 경로 스무딩**, 급격한 방향 전환 최소화
     
 
