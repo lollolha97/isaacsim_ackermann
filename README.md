@@ -23,9 +23,9 @@
 - ✅ **Cartographer 및 SLAM-Toolbox 기반 SLAM 지원**  
 - ✅ **NVIDIA Isaac Sim과의 원활한 통합**
 
-이 패키지는 **Ackermann 차량의 현실적인 주행**을 가능하게 하며, 기존의 차동 구동 방식의 한계를 극복합니다.
+이 패키지는 **Ackermann 차량 제어**를 포함하며, **Ackermann 차량에 적합한 SLAM&NAV를 제공**합니다.
 
-**Waypoint의 orientation이 시작점 기준으로 크게 차이가 나면 수렴하지 못하는 한계가 존재**
+- Limitation : Waypoint의 orientation이 시작점 기준으로 크게 차이가 나면 수렴하지 못하는 한계가 존재
 ---
 
 ## 📁 패키지 구조
