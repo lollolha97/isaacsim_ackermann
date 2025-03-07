@@ -13,7 +13,7 @@
 
 | Planner | Ackermann Radius | Third Image |
 |---------|----------------|-------------|
-| ![Leather_Radius](./github_image/ackermann_radius.png) | ![Leather + Office](./github_image/ㅣleather.png) | ![Planner](./github_image/planner.png) |
+| ![Leather_Radius](./github_image/ackermann_radius.png) | ![Leather + Office](./github_image/leather.png) | ![Planner](./github_image/planner.png) |
 
 
 **ROS 2 Navigation2**, **SmacPlannerHybrid** **nav2_regulated_pure_pursuit_controller**를 활용하여 다음과 같은 기능을 제공합니다:
