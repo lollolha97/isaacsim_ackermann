@@ -25,7 +25,11 @@
 
 이 패키지는 **Ackermann 차량 제어**를 포함하며, **Ackermann 차량에 적합한 SLAM&NAV를 제공**합니다.
 
-- Limitation : Waypoint의 orientation이 시작점 기준으로 크게 차이가 나면 수렴하지 못하는 한계가 존재
+- **참고:** `param` 파일의 `robot_radius` 값을 수정하면 **Gazebo에서도 사용 가능합니다.**  
+
+- **제한 사항:**  
+  - Waypoint의 **orientation**(방향)이 시작점과 크게 차이가 날 경우, **수렴하지 못하는 한계가 존재합니다.**  
+
 ---
 
 ## 📁 패키지 구조
