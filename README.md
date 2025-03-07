@@ -11,6 +11,10 @@
 
 - 이 프로젝트는 **NVIDIA Isaac Sim 4.5**에서 **Ackermann 조향 차량**을 위한 **통합된 네비게이션 및 SLAM 스택**을 제공합니다.
 
+![Planner](./github_image/planner.png)
+![Isaac Sim Ackermann](./github_image/ackermann_radius.png)
+
+
 - **ROS 2 Navigation2**, **SmacPlannerHybrid** **nav2_regulated_pure_pursuit_controller**를 활용하여 다음과 같은 기능을 제공합니다:
 
 ✅ **Ackermann 운동학에 최적화된 Hybrid A 글로벌 플래너**
