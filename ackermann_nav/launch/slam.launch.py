@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Modifications:
-# - Adapted to support Ackermann-based vehicles.
-# - Removed unnecessary dependencies.
-# - Added integration with isaacsim_ackermann.
-
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -64,7 +59,7 @@ def generate_launch_description():
 
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file',
-        default_value=os.path.join(bringup_dir, 'params', 'nav2_params.yaml'),
+        default_value=os.path.join(bringup_dir, 'params', 'isaac_params.yaml'),
         description='Full path to the ROS2 parameters file to use for all launched nodes')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(

@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Modifications:
-# - Adapted to support Ackermann-based vehicles.
-# - Removed unnecessary dependencies.
-# - Added integration with isaacsim_ackermann.
-
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -38,13 +33,12 @@ def generate_launch_description():
     
     my_launch_dir = os.path.join(my_nav_dir, 'launch')
     my_param_dir = os.path.join(my_nav_dir, 'param')
-    my_param_file = 'ackermann_param.yaml'
+    my_param_file = 'acker_params.yaml' #'neuronbot_params.yaml'
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration('namespace')
     use_namespace = LaunchConfiguration('use_namespace')
     slam = LaunchConfiguration('slam')
-    map_yaml_file = LaunchConfiguration('map')
     use_sim_time = LaunchConfiguration('use_sim_time')
     params_file = LaunchConfiguration('params_file')
     autostart = LaunchConfiguration('autostart')
@@ -53,8 +47,7 @@ def generate_launch_description():
     open_rviz = LaunchConfiguration('open_rviz')
 
     param_substitutions = {
-        'use_sim_time': use_sim_time,
-        'yaml_filename': map_yaml_file}
+        'use_sim_time': use_sim_time}
 
     configured_params = RewrittenYaml(
         source_file=params_file,

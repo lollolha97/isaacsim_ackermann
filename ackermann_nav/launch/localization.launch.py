@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -29,11 +28,11 @@ from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
     # Get the launch directory
-    my_nav_dir = get_package_share_directory('neuronbot2_nav')
+    my_nav_dir = get_package_share_directory('ackermann_nav')
     my_param_dir = os.path.join(my_nav_dir, 'param')
-    my_param_file = 'neuronbot_params.yaml'
+    my_param_file = 'acker_params.yaml'
     my_map_dir = os.path.join(my_nav_dir, 'map')
-    my_map_file = 'bookstore.yaml'
+    my_map_file = 'map.yaml'
 
     namespace = LaunchConfiguration('namespace')
     map_yaml_file = LaunchConfiguration('map')

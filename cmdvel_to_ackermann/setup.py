@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'ackermann_nav'
+package_name = 'cmd_vel_to_ackermann'
 
 setup(
     name=package_name,
@@ -25,6 +25,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "cmdvel_to_ackermann = cmdvel_to_ackermann.cmdvel_to_ackermann:main"
         ],
     },
 )

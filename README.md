@@ -42,9 +42,8 @@ This package enables **realistic autonomous navigation**, overcoming conventiona
 1. **Localization-based Navigation**  
    - `localization.launch.py` (Requires pre-built maps)  
 2. **Integrated SLAM & Navigation**  
-   - `bringup.launch.py`  
-     - `ackermann_fast.yaml` (Optimized for high-speed navigation)  
-     - `ackermann_param.yaml` (General navigation settings)  
+   - `bringup.launch.py`    
+     - `ackermann_params.yaml`  
 
 ---
 

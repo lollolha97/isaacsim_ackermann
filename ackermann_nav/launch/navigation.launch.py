@@ -30,7 +30,7 @@ def generate_launch_description():
     # Get the launch directory
     my_nav_dir = get_package_share_directory('ackermann_nav')
     my_param_dir = os.path.join(my_nav_dir, 'param')
-    my_param_file = 'ackermann_param.yaml'
+    my_param_file = 'acker_params.yaml'
 
     namespace = LaunchConfiguration('namespace')
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -80,7 +80,7 @@ def generate_launch_description():
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='false',
+        default_value='True',
         description='Use simulation (Gazebo) clock if true')
 
     declare_params_file_cmd = DeclareLaunchArgument(
