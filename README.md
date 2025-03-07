@@ -64,15 +64,30 @@ sudo apt update && sudo apt install -y \
 ### **2️⃣ Clone and Build the Package**
 ```bash
 cd ~/ros2_ws/src
-git clone <repo-url>
+git clone https://github.com/lollolha97/isaacsim_ackermann.git
 cd ~/ros2_ws
 colcon build --symlink-install
+source install/local_setup.bash
 ```
 
 ---
 
 ## ▶️ **Execution Guide**
-### **1️⃣ SLAM Initialization**
+### **1️⃣ Manual Control via Teleoperation**
+####  Convert cmd_vel to ackermann_cmd
+```bash
+# cmd_vel to ackermann_cmd
+ros2 launch cmdvel_to_ackermann cmdvel_to_ackermann.launch.py
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+#### Or you can just use teleop-twist-keyboard for control
+```bash
+# cmd_vel to ackermann_cmd
+ros2 launch cmdvel_to_ackermann cmdvel_to_ackermann.launch.py
+```
+
+### **2️⃣ SLAM Initialization**
 ```bash
 # Launch Cartographer SLAM
 ros2 launch ackermann_slam cartographer.launch.py
@@ -81,19 +96,12 @@ ros2 launch ackermann_slam cartographer.launch.py
 ros2 launch ackermann_slam slam_toolbox.launch.py
 ```
 
-### **2️⃣ Navigation Execution**
+###  **3️⃣ SLAM & Navigation Execution**
 ```bash
-# Localization-based navigation (requires a pre-existing map)
-ros2 launch ackermann_nav localization.launch.py
-
-# Simultaneous SLAM & Navigation
 ros2 launch ackermann_nav bringup.launch.py
 ```
 
-### **3️⃣ Manual Control via Teleoperation**
-```bash
-ros2 launch ackermann_control teleop_to_ackermann.launch.py
-```
+
 
 ---
 
