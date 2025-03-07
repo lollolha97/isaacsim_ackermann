@@ -1,0 +1,25 @@
+This software includes portions of the IsaacSim-ros_workspaces project, which is licensed under the Apache License 2.0.
+See: https://github.com/isaac-sim/IsaacSim-ros_workspaces
+
+Included directory and files from IsaacSim-ros_workspaces:
+- isaacsim_humble/ackermann_control/cmdvel_to_ackermann (originally from humble_ws/src/ackermann_control/cmdvel_to_ackermann)
+
+Modifications:
+- Added a new launch file for improved integration with isaacsim_ackermann.
+
+---
+
+This software includes portions of the NeuronBot2 project, which is licensed under the Apache License 2.0.
+See: https://github.com/Adlink-ROS/neuronbot2
+
+Included directories and files from NeuronBot2:
+- ackermann_slam/ (originally from neuronbot2_slam)
+
+Included files from Samsung Research Russia:
+- ackermann_nav/path_planner.py (originally from Navigation2)
+
+Modifications:
+- Adapted for Ackermann-based vehicles.
+- Removed unnecessary dependencies.
+- Integrated with isaacsim_ackermann.
+
