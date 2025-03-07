@@ -11,7 +11,7 @@
 
 - 이 프로젝트는 **NVIDIA Isaac Sim 4.5**에서 **Ackermann 조향 차량**을 위한 **통합된 네비게이션 및 SLAM 스택**을 제공합니다.
 
-| Planner | Ackermann Radius | Third Image |
+| Leather Radius | Leather + Office | Planner |
 |---------|----------------|-------------|
 | ![Leather_Radius](./github_image/ackermann_radius.png) | ![Leather + Office](./github_image/leather.png) | ![Planner](./github_image/planner.png) |
 
